@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SmartHomeController</string>
+    <string name="title_room_detail">Room Detail</string>
+</resources>
