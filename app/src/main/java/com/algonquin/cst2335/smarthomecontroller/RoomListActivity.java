@@ -29,7 +29,7 @@ import java.util.List;
  */
 public class RoomListActivity extends AppCompatActivity {
 
-    /**
+    /** mTwoPane instance variable
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
@@ -59,7 +59,7 @@ public class RoomListActivity extends AppCompatActivity {
 
         if (findViewById(R.id.room_detail_container) != null) {
             // The detail container view will be present only in the
-            // large-screen layouts (res/values-w900dp).
+            // large-screen layouts (res/values-w900dp). (Tablets)
             // If this view is present, then the
             // activity should be in two-pane mode.
             mTwoPane = true;
