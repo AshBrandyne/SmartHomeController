@@ -20,6 +20,7 @@ import com.algonquin.cst2335.smarthomecontroller.dummy.DummyContent;
 import java.util.List;
 
 /**
+ * Ash-Lee's Kitchen Branch
  * An activity representing a list of Kitchens. This activity
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,
