@@ -1,4 +1,4 @@
-package com.algonquin.cst2335.smarthomecontroller.home;
+package com.algonquin.cst2335.smarthomecontroller.dummy;
 
 import java.util.ArrayList;
 import java.util.HashMap;

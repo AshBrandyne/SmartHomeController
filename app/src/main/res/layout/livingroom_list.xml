@@ -2,12 +2,12 @@
 <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/room_list"
-    android:name="com.algonquin.cst2335.smarthomecontroller.RoomListFragment"
+    android:id="@+id/livingroom_list"
+    android:name="com.algonquin.cst2335.smarthomecontroller.LivingRoomListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context="com.algonquin.cst2335.smarthomecontroller.RoomListActivity"
-    tools:listitem="@layout/room_list_content" />
+    tools:context="com.algonquin.cst2335.smarthomecontroller.LivingRoomListActivity"
+    tools:listitem="@layout/livingroom_list_content" />

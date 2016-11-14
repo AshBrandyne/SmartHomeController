@@ -11,17 +11,17 @@ import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 
 /**
- * An activity representing a single Room detail screen. This
+ * An activity representing a single Kitchen detail screen. This
  * activity is only used narrow width devices. On tablet-size devices,
  * item details are presented side-by-side with a list of items
- * in a {@link RoomListActivity}.
+ * in a {@link KitchenListActivity}.
  */
-public class RoomDetailActivity extends AppCompatActivity {
+public class KitchenDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_room_detail);
+        setContentView(R.layout.activity_kitchen_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
 
@@ -53,12 +53,12 @@ public class RoomDetailActivity extends AppCompatActivity {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(RoomDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(RoomDetailFragment.ARG_ITEM_ID));
-            RoomDetailFragment fragment = new RoomDetailFragment();
+            arguments.putString(KitchenDetailFragment.ARG_ITEM_ID,
+                    getIntent().getStringExtra(KitchenDetailFragment.ARG_ITEM_ID));
+            KitchenDetailFragment fragment = new KitchenDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.room_detail_container, fragment)
+                    .add(R.id.kitchen_detail_container, fragment)
                     .commit();
         }
     }
@@ -73,7 +73,7 @@ public class RoomDetailActivity extends AppCompatActivity {
             //
             // http://developer.android.com/design/patterns/navigation.html#up-vs-back
             //
-            navigateUpTo(new Intent(this, RoomListActivity.class));
+            navigateUpTo(new Intent(this, KitchenListActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

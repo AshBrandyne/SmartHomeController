@@ -9,18 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.algonquin.cst2335.smarthomecontroller.home.DummyContent;
+import com.algonquin.cst2335.smarthomecontroller.dummy.DummyContent;
 
 /**
- * A fragment representing a single Room detail screen.
- * This fragment is either contained in a {@link RoomListActivity}
- * in two-pane mode (on tablets) or a {@link RoomDetailActivity}
+ * A fragment representing a single Kitchen detail screen.
+ * This fragment is either contained in a {@link KitchenListActivity}
+ * in two-pane mode (on tablets) or a {@link KitchenDetailActivity}
  * on handsets.
- *
- * @author Ash-Lee Hommy
- * @version 1.0.0 Nov 8th, 2016
  */
-public class RoomDetailFragment extends Fragment {
+public class KitchenDetailFragment extends Fragment {
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
@@ -36,7 +33,7 @@ public class RoomDetailFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public RoomDetailFragment() {
+    public KitchenDetailFragment() {
     }
 
     @Override
@@ -60,11 +57,11 @@ public class RoomDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.room_detail, container, false);
+        View rootView = inflater.inflate(R.layout.kitchen_detail, container, false);
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.room_detail)).setText(mItem.details);
+            ((TextView) rootView.findViewById(R.id.kitchen_detail)).setText(mItem.details);
         }
 
         return rootView;
