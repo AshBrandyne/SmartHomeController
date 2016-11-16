@@ -75,7 +75,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RoomListActivity" />
         <activity
-            android:name=".dummy.RemoteActivity"
+            android:name=".RemoteActivity"
             android:label="@string/title_activity_remote"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

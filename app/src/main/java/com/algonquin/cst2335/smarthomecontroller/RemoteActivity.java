@@ -1,4 +1,4 @@
-package com.algonquin.cst2335.smarthomecontroller.dummy;
+package com.algonquin.cst2335.smarthomecontroller;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.algonquin.cst2335.smarthomecontroller.R;
 
 public class RemoteActivity extends AppCompatActivity {
     Button goButton = (Button) findViewById(R.id.goButton);
