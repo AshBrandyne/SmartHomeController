@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.algonquin.cst2335.smarthomecontroller.dummy.RemoteActivity"
+    tools:context="com.algonquin.cst2335.smarthomecontroller.RemoteActivity"
     tools:showIn="@layout/activity_remote">
 
     <TextView
