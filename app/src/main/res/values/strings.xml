@@ -14,4 +14,10 @@
     <string name="roomLiving">Living Room</string>
     <string name="roomAuto">Automobile</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="submit">Submit</string>
+    <string name="ok">Ok</string>
+    <string name="go">Go</string>
+    <string name="temperature">Temperature</string>
+    <string name="thermostat">Thermostat</string>
+    <string name="welcomeTextHome">Welcome home! How do you like the temperature right now?</string>
 </resources>
