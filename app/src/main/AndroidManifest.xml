@@ -73,7 +73,11 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".RoomListActivity"></activity>
+        <activity android:name=".RoomListActivity" />
+        <activity
+            android:name=".dummy.RemoteActivity"
+            android:label="@string/title_activity_remote"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
