@@ -13,5 +13,7 @@
     <string name="roomKitchen">Kitchen</string>
     <string name="roomLiving">Living Room</string>
     <string name="roomAuto">Automobile</string>
+    <string name="welcomeHome">Welcome Home!</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_home_temp">HomeTemp</string>
 </resources>
