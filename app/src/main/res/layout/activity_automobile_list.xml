@@ -30,13 +30,18 @@
         <include layout="@layout/automobile_list" />
     </FrameLayout>
 
+    <!--
+    <a href="https://icons8.com/web-app/3220/Plus">Plus icon credits</a>
+    -->
+
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/addNewAutomobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:src="@drawable/plus_48"
+        app:backgroundTint="@android:color/background_dark" />
 
 
 </android.support.design.widget.CoordinatorLayout>
