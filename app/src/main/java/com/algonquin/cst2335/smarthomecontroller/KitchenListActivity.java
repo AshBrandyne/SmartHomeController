@@ -21,6 +21,10 @@ import java.util.List;
 
 /**
  * Ash-Lee's Kitchen Branch
+ *
+ * Icons from Icons8.com
+ * <a href="https://icons8.com">Icon pack by Icons8</a>
+ *
  * An activity representing a list of Kitchens. This activity
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,
