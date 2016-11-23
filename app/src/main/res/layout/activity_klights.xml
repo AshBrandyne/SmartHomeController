@@ -14,7 +14,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kitchen Lights"/>
+        android:text="@string/kitchen_lights"
+        android:textSize="20dp"
+        android:shadowColor="#000000"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:textColor="@android:color/white"/>
 
     <LinearLayout
         android:id="@+id/lightsOnKitchen"
@@ -38,7 +44,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="On" />
+            android:text="@string/on"
+            android:id="@+id/lights_on_text"/>
 
     </LinearLayout>
 
@@ -64,7 +71,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Off" />
+            android:text="@string/off"
+            android:id="@+id/lights_off_text"/>
 
     </LinearLayout>
 

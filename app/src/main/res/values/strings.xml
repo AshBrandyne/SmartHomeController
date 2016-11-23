@@ -15,4 +15,12 @@
     <string name="roomAuto">Automobile</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_remote">RemoteActivity</string>
+    <string name="kitchen_lights">Kitchen Lights</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="perfect">Perfect!</string>
+    <string name="too_hot">Too Hot!</string>
+    <string name="too_cold">Too Cold!</string>
+    <string name="welcomeTextHome">Welcome home! How do you like the temperature right now?</string>
+
 </resources>
