@@ -10,6 +10,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 
+/**
+ * Class to set lights in the Kitchen
+ *
+ * Use this tutorial for how to change background with seekbar: http://android-er.blogspot.ca/2009/08/change-background-color-by-seekbar.html
+ */
 public class KLightsActivity extends AppCompatActivity {
     SeekBar dimmer;
     LinearLayout lightsOn;
@@ -50,8 +55,32 @@ public class KLightsActivity extends AppCompatActivity {
             }
         });
 
+        dimmer.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                setBackgroundSeekBar();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
 
+
+    }
+
+    private void setBackgroundSeekBar() {
+        seekR = (dimmer.getProgress() * 0x10000);
+        seekG = (dimmer.getProgress() * 0x100);
+
+        setActivityBackgroundColor(0xff000000 + seekR + seekG + seekB);
     }
 
     public void setActivityBackgroundColor(int color) {
