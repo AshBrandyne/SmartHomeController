@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.algonquin.cst2335.smarthomecontroller">
-    
-    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -83,8 +82,11 @@
         <activity
             android:name=".RemoteActivity"
             android:label="@string/title_activity_remote"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".HomeTemp"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".HomeTemp" />
+        <activity android:name=".KMicrowaveActivity" />
+        <activity android:name=".KLightsActivity" />
+        <activity android:name=".KFridgeActivity"></activity>
     </application>
 
 </manifest>
