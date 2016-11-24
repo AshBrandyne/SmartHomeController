@@ -1,5 +1,6 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -7,17 +8,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class RemoteActivity extends AppCompatActivity {
-    Button goButton = (Button) findViewById(R.id.goButton);
-    TextView searchText = (TextView) findViewById(R.id.searchTextView);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remote);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Button goButton = (Button) findViewById(R.id.goButton);
+        Button sleep = (Button)findViewById(R.id.button);
+        TextView searchText = (TextView) findViewById(R.id.searchTextView);
+        SeekBar seek =(SeekBar) findViewById(R.id.seekBar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -40,6 +46,27 @@ public class RemoteActivity extends AppCompatActivity {
                 toast.show();
             }
         });
+
+        seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+            int progressChanged = 0;
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+                progressChanged = progress;}
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Toast.makeText(RemoteActivity.this,"Volume:"+ progressChanged,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+
     }
 
 }
