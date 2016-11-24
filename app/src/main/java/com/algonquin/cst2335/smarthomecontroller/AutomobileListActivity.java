@@ -45,6 +45,9 @@ public class AutomobileListActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
+        automobiles = new ArrayList<String>();
+        automobiles.add("Chevrolet Avalanche 2012");
+
         View recyclerView = findViewById(R.id.automobile_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
@@ -58,9 +61,6 @@ public class AutomobileListActivity extends AppCompatActivity
             mTwoPane = true;
         }
 
-        automobiles = new ArrayList<String>();
-        automobiles.add("Chevrolet Avalanche 2012");
-
         FloatingActionButton addNewAutomobile = (FloatingActionButton) findViewById(R.id.addNewAutomobile);
         addNewAutomobile.setOnClickListener(new View.OnClickListener()
         {
@@ -68,7 +68,11 @@ public class AutomobileListActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 AlertDialog.Builder newAutomobileBuilder = new AlertDialog.Builder(AutomobileListActivity.this);
-                newAutomobileBuilder.setTitle("Add new automobile?")
+
+                LayoutInflater inflater = AutomobileListActivity.this.getLayoutInflater();
+                final View addAutomobile = inflater.inflate(R.layout.add_automobile_dialog, null);
+
+                newAutomobileBuilder.setView(addAutomobile).setTitle("Add new automobile?")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener()
                         {
                             public void onClick(DialogInterface dialog, int id)
