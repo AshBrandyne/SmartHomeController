@@ -189,6 +189,6 @@ public class KitchenListActivity extends AppCompatActivity {
 
     protected void onDestroy() {
         super.onDestroy();
-        database.close();
+
     }
 }
