@@ -1,6 +1,10 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
+
 import android.graphics.Color;
+import android.graphics.SurfaceTexture;
+import android.hardware.Camera;
+import android.hardware.Camera.Parameters;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
@@ -10,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import java.io.IOException;
 
 /**
  * Class to set lights in the Kitchen
@@ -47,8 +53,6 @@ public class KLightsActivity extends AppCompatActivity {
                 setActivityBackgroundColor(Color.YELLOW);
                 onText.setTextColor(Color.parseColor("#000000"));
                 offText.setTextColor(Color.parseColor("#000000"));
-
-
             }
         });
 
