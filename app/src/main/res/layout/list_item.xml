@@ -4,6 +4,8 @@
     android:layout_height="wrap_content"
     android:text="test String"
     android:id="@+id/item_text"
+    android:gravity="center"
+    android:textSize="40dp"
 >
 
 </TextView>
