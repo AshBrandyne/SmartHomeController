@@ -42,7 +42,7 @@ public class RoomListActivity extends AppCompatActivity {
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomLiving))){
                     startActivity(new Intent(RoomListActivity.this, RemoteActivity.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomKitchen))){
-                    startActivity(new Intent(RoomListActivity.this, KLightsActivity.class));
+                    startActivity(new Intent(RoomListActivity.this, KitchenListActivity.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomAuto))){
                     startActivity(new Intent(RoomListActivity.this, AutomobileListActivity.class));
                 }

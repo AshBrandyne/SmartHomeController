@@ -1,6 +1,7 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -27,7 +28,7 @@ public class KitchenDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private String mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -44,12 +45,12 @@ public class KitchenDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = getArguments().getString(ARG_ITEM_ID);
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.content);
+                appBarLayout.setTitle("Kitchen Appliance");
             }
         }
     }
@@ -59,11 +60,18 @@ public class KitchenDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.kitchen_detail, container, false);
 
-        // Show the dummy content as text in a TextView.
+        // Start an intent on click
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.kitchen_detail)).setText(mItem.details);
+            if (mItem.equals("Lights")) {
+                Intent intent = new Intent(getActivity(), KLightsActivity.class);
+                startActivity(intent);
+            } else if (mItem.equals("Microwave")) {
+                Intent intent = new Intent(getActivity(), KMicrowaveActivity.class);
+                startActivity(intent);
+            } else {
+                ((TextView) rootView.findViewById(R.id.kitchen_detail)).setText(mItem);
+            }
         }
-
         return rootView;
     }
 }
