@@ -1,5 +1,7 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -63,6 +65,14 @@ public class RemoteActivity extends AppCompatActivity {
             }
         });
 
+
+        sleep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RemoteActivity.this, LRBlindsActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

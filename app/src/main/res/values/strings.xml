@@ -22,5 +22,7 @@
     <string name="too_hot">Too Hot!</string>
     <string name="too_cold">Too Cold!</string>
     <string name="welcomeTextHome">Welcome home! How do you like the temperature right now?</string>
+    <string name="title_activity_lrlamp">LRLampActivity</string>
+    <string name="title_activity_lrblinds">LRBlindsActivity</string>
 
 </resources>
