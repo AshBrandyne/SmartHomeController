@@ -14,6 +14,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.algonquin.cst2335.smarthomecontroller.R.id.favButton;
+
 public class RemoteActivity extends AppCompatActivity {
 
     @Override
@@ -22,9 +24,12 @@ public class RemoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remote);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        Button goButton = (Button) findViewById(R.id.goButton);
+        Button playButton = (Button) findViewById(favButton);
         Button sleep = (Button)findViewById(R.id.button);
-        TextView searchText = (TextView) findViewById(R.id.searchTextView);
+        Button pause = (Button) findViewById(R.id.guideButton);
+        Button rewind = (Button) findViewById(R.id.liveButton);
+        Button last = (Button) findViewById(R.id.lastButton);
+
         SeekBar seek =(SeekBar) findViewById(R.id.seekBar);
         setSupportActionBar(toolbar);
 
@@ -37,7 +42,7 @@ public class RemoteActivity extends AppCompatActivity {
             }
         });
 
-        goButton.setOnClickListener(new View.OnClickListener() {
+        playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

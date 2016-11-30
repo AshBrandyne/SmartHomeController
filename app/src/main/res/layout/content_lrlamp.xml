@@ -13,4 +13,86 @@
     tools:context="com.algonquin.cst2335.smarthomecontroller.LRLampActivity"
     tools:showIn="@layout/activity_lrlamp">
 
+    <TextView
+        android:text="Intensity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/seekBar2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp"
+        android:id="@+id/intense"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="29dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/scooplight"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/rightLightButton"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/scooplight"
+        android:id="@+id/middleLightButton"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/scooplight"
+        android:id="@+id/leftLightButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Marvin Gaye"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relaxButton"
+        android:drawableLeft="@drawable/rose"
+        android:layout_below="@+id/middleLightButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="47dp" />
+
+    <Button
+        android:text="Reading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/readingButton"
+        android:drawableLeft="@drawable/book"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/relaxButton"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Baseball Game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/baseballButton"
+        android:drawableLeft="@drawable/baseball"
+        android:layout_below="@+id/readingButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/baseballtwo"
+        android:id="@+id/baseballTwo"
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp" />
 </RelativeLayout>

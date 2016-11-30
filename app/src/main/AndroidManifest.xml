@@ -97,6 +97,10 @@
         <activity
             android:name=".LRBlindsActivity"
             android:label="@string/title_activity_lrblinds"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LRBlindsClose"
+            android:label="@string/title_activity_lrblinds_close"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
