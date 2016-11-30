@@ -13,23 +13,6 @@
     tools:context="com.algonquin.cst2335.smarthomecontroller.RemoteActivity"
     tools:showIn="@layout/activity_remote">
 
-    <TextView
-        android:text="Channel Search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchTextView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="181dp" />
-
-    <Button
-        android:text="Go"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="66dp"
-        android:id="@+id/goButton"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
     <SeekBar
         android:layout_width="match_parent"
@@ -43,11 +26,151 @@
         android:text="Sleep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:elevation="0dp"
         android:layout_above="@+id/seekBar"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="22dp"
-        android:id="@+id/button"
-        android:elevation="0dp" />
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="11dp" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:id="@+id/remoteButtons"
+        android:layout_above="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp">
+
+        <Button
+            android:text="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/oneButton"
+           />
+        <Button
+            android:text="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/twoButton"
+            />
+        <Button
+            android:text="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/threeButton"
+            />
+        <Button
+            android:text="4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/fourButton"
+            />
+        <Button
+            android:text="5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fiveButton"
+            />
+        <Button
+            android:text="6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sixButton"
+            />
+        <Button
+            android:text="7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sevenButton"
+            />
+        <Button
+            android:text="8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/eightButton"
+            />
+        <Button
+            android:text="9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nineButton"/>
+
+        <ImageButton
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_media_rew"
+            android:id="@+id/imageButton5"
+            android:layout_row="4"
+            android:layout_column="2" />
+
+        <Button
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/zeroButton"
+            android:layout_row="3"
+            android:layout_column="1" />
+
+        <ImageButton
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_media_pause"
+            android:id="@+id/imageButton4"
+            android:layout_row="4"
+            android:layout_column="1" />
+
+        <ImageButton
+            android:layout_width="87dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_media_play"
+            android:id="@+id/imageButton3"
+            android:layout_row="4"
+            android:layout_column="0" />
+
+
+    </GridLayout>
+
+    <Button
+        android:text="LiveTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/liveButton"
+        android:layout_alignBaseline="@+id/favButton"
+        android:layout_alignBottom="@+id/favButton"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideButton"
+        android:elevation="0dp"
+        android:layout_alignBaseline="@+id/liveButton"
+        android:layout_alignBottom="@+id/liveButton"
+        android:layout_toStartOf="@+id/liveButton" />
+
+    <Button
+        android:text="Last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastButton"
+        android:layout_alignBottom="@+id/favButton"
+        android:layout_alignTop="@+id/guideButton"
+        android:layout_toStartOf="@+id/guideButton" />
+
+    <Button
+        android:text="Fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/favButton"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/lastButton" />
 
 </RelativeLayout>
