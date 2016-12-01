@@ -40,7 +40,7 @@ public class RoomListActivity extends AppCompatActivity {
                 if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomHome))){
                     startActivity(new Intent(RoomListActivity.this, HomeTemp.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomLiving))){
-                    startActivity(new Intent(RoomListActivity.this, RemoteActivity.class));
+                    startActivity(new Intent(RoomListActivity.this, LivingRoomListActivity.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomKitchen))){
                     startActivity(new Intent(RoomListActivity.this, KitchenListActivity.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomAuto))){
