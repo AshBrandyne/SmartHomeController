@@ -26,16 +26,16 @@ public class ThermostatControl extends AppCompatActivity {
         setContentView(R.layout.activity_thermostat_control);
         int maxProgress = 40;
 
-        final float[] hsvColor = {0, 1, 1};
-        hsvColor[0] = 360f * progress / maxProgress;
+//        final float[] hsvColor = {0, 1, 1};
+//        hsvColor[0] = 360f * progress / maxProgress;
         tempBar = (SeekBar) findViewById(R.id.homeTempBar);
-        setActivityBackgroundColor();
+//        setActivityBackgroundColor();
         tempBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 
             @Override
             public void onProgressChanged(SeekBar tempBar, int progress, boolean fromUser) {
-                setActivityBackgroundColor();
+                setBackgroundSeekBar();
             }
 
             @Override
@@ -49,15 +49,18 @@ public class ThermostatControl extends AppCompatActivity {
             }
         });
     }
-    private void setActivityBackgroundColor() {
-        backColor = tempBar.getProgress();
 
-        screen.setBackgroundColor(
-                0xff000000
-                + backColor
-        );
+    private void setBackgroundSeekBar() {
+        backColor = (tempBar.getProgress() * 10000);
+
+        setActivityBackGroundColor(0xff000000 + backColor);
 
 
+    }
+
+    public void setActivityBackGroundColor(int color) {
+        View view = this.getWindow().getDecorView();
+        view.setBackgroundColor(color);
     }
 }
 /**
