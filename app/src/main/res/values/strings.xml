@@ -25,5 +25,6 @@
     <string name="title_activity_lrlamp">LRLampActivity</string>
     <string name="title_activity_lrblinds">LRBlindsActivity</string>
     <string name="title_activity_lrblinds_close">LRBlindsClose</string>
+    <string name="title_activity_thermostat_control">ThermostatControl</string>
 
 </resources>
