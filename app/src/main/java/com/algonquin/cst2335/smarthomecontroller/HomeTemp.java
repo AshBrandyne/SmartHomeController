@@ -46,7 +46,7 @@ public class HomeTemp extends AppCompatActivity {
 
 
     }
-        // setSupportActionBar(toolbar);
+        //Thermometer image credit:  https://pixabay.com/p-159386/?no_redirect
 
 
     }
