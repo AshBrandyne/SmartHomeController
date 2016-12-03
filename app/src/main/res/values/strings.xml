@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartHomeController</string>
+    <string name="app_name">Homes by Hommy</string>
     <string name="title_room_detail">Room Detail</string>
     <string name="title_livingroom_list">LivingRooms</string>
     <string name="title_livingroom_detail">LivingRoom Detail</string>
