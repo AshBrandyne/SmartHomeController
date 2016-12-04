@@ -26,8 +26,11 @@
     <string name="title_activity_lrblinds">LRBlindsActivity</string>
     <string name="title_activity_lrblinds_close">LRBlindsClose</string>
     <string name="title_activity_thermostat_control">ThermostatControl</string>
+    <string-array name="Options">
+        <item>Garage</item>
+        <item>Home Temperature</item>
+        <item>Outside Weather</item>
 
-
-
+    </string-array>
 
 </resources>
