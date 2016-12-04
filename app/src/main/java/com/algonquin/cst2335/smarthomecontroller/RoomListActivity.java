@@ -38,7 +38,7 @@ public class RoomListActivity extends AppCompatActivity {
                 String selectedItem = textView.getText().toString();
                 //if strTest = name of menu item string, launch that activity
                 if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomHome))){
-                    startActivity(new Intent(RoomListActivity.this, HomeTemp.class));
+                    startActivity(new Intent(RoomListActivity.this, HomeSubMenu.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomLiving))){
                     startActivity(new Intent(RoomListActivity.this, LivingRoomListActivity.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomKitchen))){
