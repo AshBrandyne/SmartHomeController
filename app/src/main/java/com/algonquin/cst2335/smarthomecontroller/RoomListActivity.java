@@ -1,11 +1,13 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +28,7 @@ public class RoomListActivity extends AppCompatActivity {
         rooms.add(getResources().getString(R.string.roomLiving));
         rooms.add(getResources().getString(R.string.roomKitchen));
         rooms.add(getResources().getString(R.string.roomAuto));
+        final MediaPlayer doorBellSound = MediaPlayer.create(this, R.raw.doorbell);
 
         roomsList.setAdapter(new ArrayAdapter<>(
                 this, R.layout.list_item, rooms
@@ -38,6 +41,7 @@ public class RoomListActivity extends AppCompatActivity {
                 String selectedItem = textView.getText().toString();
                 //if strTest = name of menu item string, launch that activity
                 if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomHome))){
+                    doorBellSound.start();
                     startActivity(new Intent(RoomListActivity.this, HomeSubMenu.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomLiving))){
                     startActivity(new Intent(RoomListActivity.this, LivingRoomListActivity.class));
