@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import static com.algonquin.cst2335.smarthomecontroller.R.id.angry_btn2;
 import static com.algonquin.cst2335.smarthomecontroller.R.id.homeColdButton;
+import static com.algonquin.cst2335.smarthomecontroller.R.id.homeJustRightButton;
 
 public class HomeTemp extends AppCompatActivity {
 
@@ -22,6 +23,7 @@ public class HomeTemp extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Button hotButton = (Button) findViewById(angry_btn2);
         Button coldButton = (Button) findViewById(homeColdButton);
+        Button perfectButton = (Button) findViewById(homeJustRightButton);
 
         hotButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +46,16 @@ public class HomeTemp extends AppCompatActivity {
 
         });
 
+        perfectButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+
+                Intent intent = new Intent(HomeTemp.this, AddPreSets.class);
+                startActivity(intent);
+            }
+
+        });
     }
         //Thermometer image credit:  https://pixabay.com/p-159386/?no_redirect
 

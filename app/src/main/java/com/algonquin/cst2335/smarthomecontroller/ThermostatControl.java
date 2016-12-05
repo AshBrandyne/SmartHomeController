@@ -1,5 +1,6 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,9 +8,12 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
+
+import static com.algonquin.cst2335.smarthomecontroller.R.id.homeJustRightButton;
 
 public class ThermostatControl extends AppCompatActivity {
 
@@ -17,8 +21,7 @@ public class ThermostatControl extends AppCompatActivity {
     public int progress = 20;
     private int backColor;
     SeekBar tempBar;
-
-    @Override
+    Button done = (Button)findViewById(homeJustRightButton);
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -48,6 +51,16 @@ public class ThermostatControl extends AppCompatActivity {
 
             }
         });
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent intent = new Intent(ThermostatControl.this, AddPreSets.class);
+                startActivity(intent);
+            }
+
+        });
     }
 
     private void setBackgroundSeekBar() {
@@ -62,7 +75,11 @@ public class ThermostatControl extends AppCompatActivity {
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(color);
     }
+
+
 }
+
+
 /**
  * Comfy chair image credit-  https://openclipart.org/image/2400px/svg_to_png/181804/comfychair.png
 
