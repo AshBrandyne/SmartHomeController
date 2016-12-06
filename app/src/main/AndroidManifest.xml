@@ -116,7 +116,8 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".AddPreSets" />
-        <activity android:name=".GarageSettings"></activity>
+        <activity android:name=".GarageSettings" />
+        <activity android:name=".Weather"></activity>
     </application>
 
 </manifest>

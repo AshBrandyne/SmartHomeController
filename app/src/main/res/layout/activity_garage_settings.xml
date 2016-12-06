@@ -34,23 +34,44 @@
         android:layout_alignParentStart="true" />
 
     <ToggleButton
-        android:text="Garage Door"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="58dp"
-        android:textOn="Open"
-        android:textOff="Closed"
-        android:id="@+id/garageDoorButton" />
-
-    <ToggleButton
         android:text="ToggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/toggleButton2"
-        android:layout_alignBaseline="@+id/toggleButton"
-        android:layout_alignBottom="@+id/toggleButton"
+        android:id="@+id/garageLightsButton"
+
+        android:layout_marginStart="20dp"
+        android:layout_alignBaseline="@+id/garageDoorButton"
+        android:layout_alignBottom="@+id/garageDoorButton"
         android:layout_alignParentStart="true" />
+
+    <ToggleButton
+        android:text="Garage Door"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="46dp"
+        android:textOn="Open"
+        android:textOff="Closed"
+        android:id="@+id/garageDoorButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/homeJustRightButton"
+
+        android:text="Done"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+
+        android:layout_width="160dp"
+        android:background="@drawable/justrightbutton"
+        android:shadowColor="#5AA800"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+
+        android:layout_height="57dp"
+        android:layout_below="@+id/garageLightsButton"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

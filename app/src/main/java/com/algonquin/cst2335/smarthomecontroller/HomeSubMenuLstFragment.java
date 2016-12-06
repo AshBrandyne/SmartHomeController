@@ -65,6 +65,11 @@ public class HomeSubMenuLstFragment extends ListFragment implements AdapterView.
            Intent intent = new Intent(getActivity() , GarageSettings.class);
            startActivity(intent);
         }
+        if(position == 2)
+        {
+            Intent intent = new Intent(getActivity() , Weather.class);
+            startActivity(intent);
+        }
     }
    }
     //muscleman.png image credit: http://appointmentschedulingnews.com/wp-content/uploads/2016/03/schedulingsystempoweruser.png
