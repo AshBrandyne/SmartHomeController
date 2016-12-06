@@ -29,9 +29,11 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 
+import static com.algonquin.cst2335.smarthomecontroller.R.id.chatWindow;
+
 public class AddPreSets extends AppCompatActivity {
     private EditText chatInput;
-    private ListView chatWindow;
+
     ArrayList<String> chat = new ArrayList<>();
     String input;
     Button send;
@@ -51,22 +53,23 @@ public class AddPreSets extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_pre_sets);
-        ListView presets = (ListView) findViewById(R.id.home_list);
+        ListView presets = (ListView) findViewById(R.id.chatWindow);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         send = (Button) findViewById(R.id.send);
-
-        setSupportActionBar(toolbar);
+        //ListView presetWindow = (ListView) findViewById(chatWindow);
+        //setSupportActionBar(toolbar);
         final ChatAdapter messageAdapter = new ChatAdapter(this);
-        chatWindow.setAdapter(messageAdapter);
+
         chatInput = (EditText) findViewById(R.id.chatInput);
         input = chatInput.getText().toString();
 
         datasource = new PreSetDataBaseHelper(this).getWritableDatabase();
 
         Cursor cur = datasource.query(PreSetDataBaseHelper.chatTable, new String[]{PreSetDataBaseHelper.KEY_ID, PreSetDataBaseHelper.KEY_MESSAGE}, null, null, null, null, null, null);
-
+        presets.setAdapter(messageAdapter);
         cur.moveToFirst();
 
 
