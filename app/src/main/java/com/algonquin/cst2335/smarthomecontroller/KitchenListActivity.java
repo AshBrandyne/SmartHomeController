@@ -81,7 +81,6 @@ public class KitchenListActivity extends AppCompatActivity {
 
         itemAdapter = new ItemAdapter(this);
         ListView theItems = (ListView) findViewById(R.id.kitchenItemsListView);
-        newItem = (EditText) findViewById(R.id.newItemET);
         Button okButton = (Button) findViewById(R.id.newItemKButton);
         theItems.setAdapter(itemAdapter);
 
