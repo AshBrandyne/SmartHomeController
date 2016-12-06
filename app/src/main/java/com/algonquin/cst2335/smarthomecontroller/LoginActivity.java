@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
     protected static final String ACTIVITY_NAME = "LoginActivity";
@@ -27,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         Button lButton = (Button) findViewById(R.id.loginButton);
         final EditText loginField = (EditText) findViewById(R.id.loginField);
+        ImageView logo = (ImageView) findViewById(R.id.logoLogin);
 
         loginField.setText(sharedPref.getString("DefaultEmail", "email@domain.com"));
 
@@ -42,6 +45,14 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
+
+        logo.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Toast.makeText(getApplicationContext(), "Welcome home!", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+        );
 
         Log.i(ACTIVITY_NAME, "In onCreate()");
     }

@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -36,6 +37,7 @@ public class KLightsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_klights);
 
         rootLayout = (LinearLayout) findViewById(R.id.activity_klights);
+        rootLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         lightsOn = (LinearLayout) findViewById(R.id.lightsOnKitchen);
         lightsOff = (LinearLayout) findViewById(R.id.lightsOffKitchen);
         dimmer = (SeekBar) findViewById(R.id.kitchenSeekBar);
@@ -53,6 +55,7 @@ public class KLightsActivity extends AppCompatActivity {
                 setActivityBackgroundColor(Color.YELLOW);
                 onText.setTextColor(Color.parseColor("#000000"));
                 offText.setTextColor(Color.parseColor("#000000"));
+                Toast.makeText(getApplicationContext(), "Lights are on", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -61,9 +64,10 @@ public class KLightsActivity extends AppCompatActivity {
         lightsOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setActivityBackgroundColor(Color.BLACK);
+                setActivityBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 onText.setTextColor(Color.parseColor("#FFFFFF"));
                 offText.setTextColor(Color.parseColor("#FFFFFF"));
+                Toast.makeText(getApplicationContext(), "Lights are off", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -93,10 +97,10 @@ public class KLightsActivity extends AppCompatActivity {
         seekG = (dimmer.getProgress() * 0x100);
 
         setActivityBackgroundColor(0xff000000 + seekR + seekG + seekB);
+
     }
 
     public void setActivityBackgroundColor(int color) {
-        View view = this.getWindow().getDecorView();
-        view.setBackgroundColor(color);
+        rootLayout.setBackgroundColor(color);
     }
 }

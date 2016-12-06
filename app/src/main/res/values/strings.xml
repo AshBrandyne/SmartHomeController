@@ -33,5 +33,6 @@
 
     </string-array>
     <string name="username">Username</string>
+    <string name="newKitchen">Add Device</string>
 
 </resources>
