@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,9 +63,15 @@ public class KitchenDetailFragment extends Fragment {
 
         // Start an intent on click
         if (mItem != null) {
+
             if (mItem.equals("Lights")) {
-                Intent intent = new Intent(getActivity(), KLightsActivity.class);
-                startActivity(intent);
+                KLightsActivity nextFrag= new KLightsActivity();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.kitchen_detail_container, nextFrag ); //
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
+                //Intent intent = new Intent(getActivity(), KLightsActivity.class);
+                //startActivity(intent);
             } else if (mItem.equals("Microwave")) {
                 Intent intent = new Intent(getActivity(), KMicrowaveActivity.class);
                 startActivity(intent);
