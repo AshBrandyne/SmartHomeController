@@ -14,6 +14,6 @@
         android:id="@+id/splashImage"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/placeholder"
+        android:src="@drawable/logo"
         android:padding="25dp" />
 </RelativeLayout>
