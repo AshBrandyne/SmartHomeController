@@ -21,10 +21,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
+/**KMicrowave Activity
  *
- * Animated Microwave gif from http://www.animated-gifs.eu/kitchen-microwaves
+ * @author Ash-Lee Hommy 040840815
  *
+ * Resources:
+ * Goat image from: https://www.dreamstime.com/royalty-free-stock-images-young-pygmy-goat-image5205749
  * Blinking animation tutorial from stack overflow: http://stackoverflow.com/questions/3450839/blinking-text-in-android-view/11991435
  */
 public class KMicrowaveActivity extends AppCompatActivity implements View.OnClickListener {

@@ -67,13 +67,16 @@ public class KitchenDetailFragment extends Fragment {
             if (mItem.equals("Lights")) {
                 KLightsActivity nextFrag= new KLightsActivity();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.kitchen_detail_container, nextFrag ); //
-                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.replace(R.id.kitchen_detail_container, nextFrag );
+                transaction.addToBackStack(null);
                 transaction.commit();
                 //Intent intent = new Intent(getActivity(), KLightsActivity.class);
                 //startActivity(intent);
             } else if (mItem.equals("Microwave")) {
                 Intent intent = new Intent(getActivity(), KMicrowaveActivity.class);
+                startActivity(intent);
+            } else if (mItem.equals("Refrigerator")) {
+                Intent intent = new Intent(getActivity(), KFridgeActivity.class);
                 startActivity(intent);
             } else {
                 ((TextView) rootView.findViewById(R.id.kitchen_detail)).setText(mItem);
