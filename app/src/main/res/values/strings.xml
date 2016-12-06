@@ -13,7 +13,7 @@
     <string name="roomKitchen">Kitchen</string>
     <string name="roomLiving">Living Room</string>
     <string name="roomAuto">Automobile</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login">Please Login</string>
     <string name="title_activity_remote">RemoteActivity</string>
     <string name="kitchen_lights">Kitchen Lights</string>
     <string name="on">On</string>
@@ -32,5 +32,6 @@
         <item>Outside Weather</item>
 
     </string-array>
+    <string name="username">Username</string>
 
 </resources>
