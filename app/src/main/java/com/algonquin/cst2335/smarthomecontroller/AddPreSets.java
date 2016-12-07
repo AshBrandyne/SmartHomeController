@@ -169,8 +169,8 @@ public class AddPreSets extends AppCompatActivity {
 
             TextView message_text = (TextView) result.findViewById(R.id.message_text);
             message_text.setText(getItem(position));
-            edit = (Button)findViewById(R.id.editButton);
-            delete = (Button)findViewById(R.id.deleteButton);
+            edit = (Button)result.findViewById(R.id.editButton);
+            delete = (Button)result.findViewById(R.id.deleteButton);
             final int positionToRemove = position;
           delete.setOnClickListener(new View.OnClickListener() {
               @Override

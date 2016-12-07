@@ -10,7 +10,8 @@
         android:text="Delete"
         android:layout_width="43dp"
         android:layout_height="24dp"
-        android:id="@+id/deleteButton" />
+        android:id="@+id/deleteButton"
+        android:textSize="14sp" />
 
     <Button
         android:text="Edit"
