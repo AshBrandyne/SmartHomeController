@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Flats by Hommy</string>
+    <string name="title_room_detail">Room Detail</string>
+    <string name="title_livingroom_list">DrawingRooms</string>
+    <string name="title_livingroom_detail">DrawingRoom Detail</string>
+    <string name="title_kitchen_list">Kitchen Appliances</string>
+    <string name="title_kitchen_detail">Kitchen Detail</string>
+    <string name="title_home_list">Flats</string>
+    <string name="title_home_detail">Flat Detail</string>
+    <string name="title_automobile_list">Automobiles</string>
+    <string name="title_automobile_detail">Automobile Detail</string>
+    <string name="roomHome">Home</string>
+    <string name="roomKitchen">Kitchen</string>
+    <string name="roomLiving">Drawing Room</string>
+    <string name="roomAuto">Automobile</string>
+    <string name="title_activity_login">Please Login</string>
+    <string name="title_activity_remote">RemoteActivity</string>
+    <string name="kitchen_lights">Kitchen Lights</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="perfect">Perfect!</string>
+    <string name="too_hot">Too Hot!</string>
+    <string name="too_cold">Too Cold!</string>
+    <string name="welcomeTextHome">Welcome home! How do you like the temperature right now?</string>
+    <string name="title_activity_lrlamp">LRLampActivity</string>
+    <string name="title_activity_lrblinds">LRBlindsActivity</string>
+    <string name="title_activity_lrblinds_close">LRBlindsClose</string>
+    <string name="title_activity_thermostat_control">ThermostatControl</string>
+    <string-array name="Options">
+        <item>Garage</item>
+        <item>Flat Temperature</item>
+        <item>Outside Weather</item>
+
+    </string-array>
+    <string name="username">Username</string>
+    <string name="newKitchen">Add Device</string>
+    <string name="title_activity_lrhome">LRHome</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--
+        Strings used in Automobile Activity and linking activities
+    -->
+
+    <string-array name="fanSettings">
+        <item>Off</item>
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+        <item>Very High</item>
+    </string-array>
+    <string-array name="fmRadio">
+        <item>88.5 FM</item>
+        <item>89.9 FM</item>
+        <item>93.9 FM</item>
+        <item>99.7 FM</item>
+        <item>100.3 FM</item>
+        <item>101.7 FM</item>
+        <item>105.3 FM</item>
+        <item>106.9 FM</item>
+    </string-array>
+    <string name="ok">Alight</string>
+    <string name="cancel">Halt</string>
+</resources>
