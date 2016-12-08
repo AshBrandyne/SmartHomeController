@@ -58,9 +58,9 @@ public class HomeSubMenu extends AppCompatActivity {
         if (menuItem.getItemId() ==  R.id.action_help) {
             final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
 
-            builder.setTitle("Automobile Activity");
-            builder.setMessage("Activity made by James Jarrett. Select an option to view and change " +
-                    "relevant settings.");
+            builder.setTitle("Home Activity");
+            builder.setMessage("Activity made by Tyler Woyiwada" +
+                    " & Each option will adjust general house settings");
             builder .setCancelable(false)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
