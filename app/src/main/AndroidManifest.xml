@@ -129,6 +129,13 @@
             android:name=".LRHome"
             android:label="@string/title_activity_lrhome"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AutomobileOdometerActivity" />
+        <activity android:name=".AutomobileDriveActivity" />
+        <activity android:name=".AutomobileFuelActivity" />
+        <activity android:name=".AutomobileLightsActivity" />
+        <activity android:name=".AutomobileRadioActivity" />
+        <activity android:name=".AutomobileTempActivity" />
+
     </application>
 
 </manifest>

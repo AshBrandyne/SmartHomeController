@@ -49,7 +49,7 @@ public class RoomListActivity extends AppCompatActivity {
                     doorBellSound.start();
                     startActivity(new Intent(RoomListActivity.this, HomeSubMenu.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomLiving))){
-                    startActivity(new Intent(RoomListActivity.this, LivingRoomListActivity.class));
+                    startActivity(new Intent(RoomListActivity.this, LRHome.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomKitchen))){
                     startActivity(new Intent(RoomListActivity.this, KitchenListActivity.class));
                 } else if (selectedItem.equalsIgnoreCase(getResources().getString(R.string.roomAuto))){
@@ -93,7 +93,7 @@ public class RoomListActivity extends AppCompatActivity {
                     intent = new Intent(this, HomeSubMenu.class);
                     break;
                 case R.id.action_sofa:
-                    intent = new Intent(this, LivingRoomListActivity.class);
+                    intent = new Intent(this, LRHome.class);
                     break;
                 case R.id.action_fridge:
                     intent = new Intent(this, KitchenListActivity.class);

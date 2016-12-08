@@ -136,7 +136,7 @@ public class KitchenListActivity extends AppCompatActivity {
                     intent = new Intent(this, HomeSubMenu.class);
                     break;
                 case R.id.action_sofa:
-                    intent = new Intent(this, LivingRoomListActivity.class);
+                    intent = new Intent(this, LRHome.class);
                     break;
                 case R.id.action_fridge:
                     intent = new Intent(this, KitchenListActivity.class);
