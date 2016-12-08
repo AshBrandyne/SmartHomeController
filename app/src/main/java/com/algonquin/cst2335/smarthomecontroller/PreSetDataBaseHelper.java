@@ -17,7 +17,7 @@ public class PreSetDataBaseHelper extends SQLiteOpenHelper {
     static final String KEY_MESSAGE = "Message";
 
 
-    static int VERSION_NUM = 1;
+    static int VERSION_NUM = 3;
     static int oldVer = VERSION_NUM;
     static int newVer = (oldVer + 1);
 
