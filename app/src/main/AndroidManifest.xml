@@ -87,9 +87,17 @@
             android:label="@string/title_activity_remote"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".HomeTemp" />
-        <activity android:name=".KMicrowaveActivity" />
-        <activity android:name=".KLightsActivity" />
-        <activity android:name=".KFridgeActivity" />
+        <activity android:name=".KMicrowaveActivity" >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.algonquin.cst2335.smarthomecontroller.KitchenListActivity" />
+        </activity>
+        <fragment android:name=".KLightsActivity" />
+        <activity android:name=".KFridgeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.algonquin.cst2335.smarthomecontroller.KitchenListActivity" />
+        </activity>
         <activity
             android:name=".LRLampActivity"
             android:label="@string/title_activity_lrlamp"

@@ -40,8 +40,8 @@ public class KFridgeActivity extends AppCompatActivity implements AdapterView.On
         Spinner freezeSpinner = (Spinner) findViewById(R.id.freezerSpinner);
         fridge = (TextView) findViewById(R.id.fridgeTemp2);
         freezer = (TextView) findViewById(R.id.freezerTemp2);
-        fritemp = "0 °C";
-        freetemp= "0 °C";
+        fritemp = "1.6 °C";
+        freetemp= "-18 °C";
 
         //Set text of the temp based on the most recent value in the database
 
@@ -95,6 +95,7 @@ public class KFridgeActivity extends AppCompatActivity implements AdapterView.On
             }
             Snackbar.make(view, "Fridge Temperature: " + fritemp, Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();
+            fridge.setText(fritemp);
 
         } else if (whichSpinner.contains("freezer")) {
             switch (itemInt) {
@@ -116,6 +117,7 @@ public class KFridgeActivity extends AppCompatActivity implements AdapterView.On
             }
             Snackbar.make(view, "Freezer Temperature: " + freetemp, Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();        }
+        freezer.setText(freetemp);
 
 
     }
