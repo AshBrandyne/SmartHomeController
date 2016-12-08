@@ -30,6 +30,8 @@ import java.io.IOException;
 /**
  * Class to set lights in the Kitchen
  *
+ * Phone vibrates when timer reaches 0
+ *
  * Use this tutorial for how to change background with seekbar: http://android-er.blogspot.ca/2009/08/change-background-color-by-seekbar.html
  */
 public class KLightsActivity extends Fragment {
