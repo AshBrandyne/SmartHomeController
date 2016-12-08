@@ -19,11 +19,18 @@ public class AutomobileDatabaseHelper extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase db)
     {
         Log.i(ACTIVITY_NAME, "Calling onCreate");
-        db.execSQL( "CREATE TABLE " + TABLE_NAME + " (" +
-                KEY_ID + " INT AUTO_INCREMENT, " +
-                KEY_MESSAGE + " VARCHAR(200), CONSTRAINT MESSAGELIST_PK PRIMARY KEY (" +
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (" +
+                KEY_ID + " INTEGER(1), " +
+                KEY_STATION + " CHAR(7), CONSTRAINT RadioStations_PK PRIMARY KEY (" +
                 KEY_ID + "));"
         );
+
+        db.execSQL("INSERT INTO " + TABLE_NAME + " VALUES (1, 'None');");
+        db.execSQL("INSERT INTO " + TABLE_NAME + " VALUES (2, 'None');");
+        db.execSQL("INSERT INTO " + TABLE_NAME + " VALUES (3, 'None');");
+        db.execSQL("INSERT INTO " + TABLE_NAME + " VALUES (4, 'None');");
+        db.execSQL("INSERT INTO " + TABLE_NAME + " VALUES (5, 'None');");
+        db.execSQL("INSERT INTO " + TABLE_NAME + " VALUES (6, 'None');");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVer, int newVer)
@@ -45,9 +52,9 @@ public class AutomobileDatabaseHelper extends SQLiteOpenHelper
 
 
     private static final String ACTIVITY_NAME = "AutomobileDatabase";
-    private static String DATABASE_NAME = "Database 1";
+    private static String DATABASE_NAME = "Automobile Database";
     private static int VERSION_NUM = 1;
-    protected static String TABLE_NAME = "MESSAGE_LIST";
-    private static String KEY_ID = "ID";
-    protected static String KEY_MESSAGE = "MESSAGE";
+    protected static String TABLE_NAME = "RadioStations";
+    protected static String KEY_ID = "ID";
+    protected static String KEY_STATION = "Station";
 }
