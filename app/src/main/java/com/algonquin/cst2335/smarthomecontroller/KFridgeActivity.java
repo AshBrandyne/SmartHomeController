@@ -3,6 +3,7 @@ package com.algonquin.cst2335.smarthomecontroller;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -156,7 +157,7 @@ public class KFridgeActivity extends AppCompatActivity implements AdapterView.On
                     intent = new Intent(this, HomeSubMenu.class);
                     break;
                 case R.id.action_sofa:
-                    intent = new Intent(this, LivingRoomListActivity.class);
+                    intent = new Intent(this, LRHome.class);
                     break;
                 case R.id.action_fridge:
                     intent = new Intent(this, KitchenListActivity.class);
@@ -168,6 +169,22 @@ public class KFridgeActivity extends AppCompatActivity implements AdapterView.On
             startActivity(intent);
         }
         return true;
+    }
+
+    private class DatabaseConnector extends AsyncTask<String, Integer, String> {
+        protected String doInBackground(String... args) {
+
+
+            return "";
+        }
+
+        protected void onProgressUpdate(Integer... value) {
+
+        }
+
+        protected void onPostExecute(String result) {
+
+        }
     }
 
 
