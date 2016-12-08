@@ -25,7 +25,9 @@ public class LRHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lrhome);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle(getTitle());
         Button remote = (Button) findViewById(R.id.remoteButt);
         Button blinds = (Button)findViewById(R.id.blindsButt);
         Button lights = (Button) findViewById(R.id.lampButt);
@@ -70,8 +72,11 @@ public class LRHome extends AppCompatActivity {
         if (menuItem.getItemId() ==  R.id.action_help) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-            builder.setTitle("LRHome Settings");
-            builder.setMessage((Html.fromHtml("")));
+            builder.setTitle("Living Room Settings");
+            builder.setMessage((Html.fromHtml("Activities by Jessica Stratton" +
+                    "<p>Choose the Remote Controll to access your favourite shows" +
+                    "<p>Choose the Lamp to access light settings" +
+                    "<p>Choose the Blinds to open/close the blinds")));
             builder .setCancelable(false)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
