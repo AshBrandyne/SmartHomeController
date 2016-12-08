@@ -1,5 +1,6 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,6 +8,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -28,6 +31,9 @@ public class ThermostatControl extends AppCompatActivity {
         setContentView(R.layout.activity_thermostat_control);
         int maxProgress = 40;
         Button done = (Button)findViewById(homeJustRightButton);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle(getTitle());
 
 //        final float[] hsvColor = {0, 1, 1};
 //        hsvColor[0] = 360f * progress / maxProgress;
@@ -75,7 +81,54 @@ public class ThermostatControl extends AppCompatActivity {
 //        View view = this.getWindow().getDecorView();
 //        view.setBackgroundColor(color);
 //    }
+@Override
+public boolean onCreateOptionsMenu(final Menu menu) {
+    getMenuInflater().inflate(R.menu.toolbar_menu, menu);
 
+    return true;
+}
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        //if it's help, show the help screen!
+        if (menuItem.getItemId() ==  R.id.action_help) {
+            final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+
+            builder.setTitle("Home Activity");
+            builder.setMessage("Activity made by Tyler Woyiwada" +
+                    " Control the thermostat");
+            builder .setCancelable(false)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            final android.app.AlertDialog alert = builder.create();
+            alert.show();
+
+        } else {
+            Intent intent = new Intent();
+            switch (menuItem.getItemId()) {
+                case R.id.action_home:
+                    intent = new Intent(this, HomeSubMenu.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_sofa:
+                    intent = new Intent(this, LRHome.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_fridge:
+                    intent = new Intent(this, KitchenListActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_car:
+                    intent = new Intent(this, AutomobileListActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+
+        }
+        return true;
+    }
 
 }
 

@@ -8,20 +8,21 @@
 
     <Button
         android:text="Delete"
-        android:layout_width="43dp"
-        android:layout_height="24dp"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
         android:id="@+id/deleteButton"
         android:textSize="14sp" />
 
     <Button
         android:text="Edit"
-        android:layout_width="43dp"
-        android:layout_height="24dp"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
         android:id="@+id/editButton" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="40dp"
         android:text="New Text"
         android:id="@+id/message_text"
         android:layout_weight="1"

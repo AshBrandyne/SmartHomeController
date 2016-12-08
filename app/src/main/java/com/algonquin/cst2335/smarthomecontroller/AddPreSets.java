@@ -2,16 +2,22 @@ package com.algonquin.cst2335.smarthomecontroller;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -23,6 +29,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -31,10 +38,12 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 
+import static android.R.attr.data;
 import static android.R.id.list;
 import static com.algonquin.cst2335.smarthomecontroller.R.id.chatWindow;
 
 public class AddPreSets extends AppCompatActivity {
+    View result;
     private EditText chatInput;
     ChatAdapter messageAdapter;
     ArrayList<String> chat = new ArrayList<>();
@@ -63,7 +72,7 @@ public class AddPreSets extends AppCompatActivity {
         setContentView(R.layout.activity_add_pre_sets);
         ListView presets = (ListView) findViewById(R.id.chatWindow);
 
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         send = (Button) findViewById(R.id.send);
         //ListView presetWindow = (ListView) findViewById(chatWindow);
         //setSupportActionBar(toolbar);
@@ -162,35 +171,92 @@ public class AddPreSets extends AppCompatActivity {
             return chat.get(position);
         }
 
-      public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent) {
 
             LayoutInflater inflater = AddPreSets.this.getLayoutInflater();
-            View result = inflater.inflate(R.layout.presetlayout, null);
+            result = inflater.inflate(R.layout.presetlayout, null);
 
             TextView message_text = (TextView) result.findViewById(R.id.message_text);
             message_text.setText(getItem(position));
-            edit = (Button)result.findViewById(R.id.editButton);
-            delete = (Button)result.findViewById(R.id.deleteButton);
+            edit = (Button) result.findViewById(R.id.editButton);
+            delete = (Button) result.findViewById(R.id.deleteButton);
+            edit.setBackgroundColor(Color.BLUE);
+            delete.setBackgroundColor(Color.RED);
             final int positionToRemove = position;
-          delete.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                  messageAdapter.remove(chat.get(positionToRemove));
-                  messageAdapter.notifyDataSetChanged();
-              }
-          });
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //messageAdapter.remove(chat.get(positionToRemove));
+                    chat.remove(messageAdapter.getItem(positionToRemove));
 
-          edit.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
+                    messageAdapter.notifyDataSetChanged();
+                }
+            });
 
-                  chatInput.setText(chat.get(positionToRemove).toString());
+            edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-              }
-          });
+                    chatInput.setText(chat.get(positionToRemove));
+                    chat.remove(messageAdapter.getItem(positionToRemove));
+                    messageAdapter.notifyDataSetChanged();
+
+                }
+            });
             return result;
 
         }
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        //if it's help, show the help screen!
+        if (menuItem.getItemId() ==  R.id.action_help) {
+            final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+
+            builder.setTitle("Set Temperature Activity");
+            builder.setMessage("Activity made by Tyler Woyiwada: " +
+                    " Click the blue button to edit the preset, the red one to delete a preset, and Save Preset to save a preset.");
+            builder .setCancelable(false)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            final android.app.AlertDialog alert = builder.create();
+            alert.show();
+
+        } else {
+            Intent intent = new Intent();
+            switch (menuItem.getItemId()) {
+                case R.id.action_home:
+                    intent = new Intent(this, HomeSubMenu.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_sofa:
+                    intent = new Intent(this, LRHome.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_fridge:
+                    intent = new Intent(this, KitchenListActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_car:
+                    intent = new Intent(this, AutomobileListActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+
+        }
+        return true;
     }
 
 
