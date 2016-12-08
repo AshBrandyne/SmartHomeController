@@ -74,7 +74,7 @@ public class LRHome extends AppCompatActivity {
 
             builder.setTitle("Living Room Settings");
             builder.setMessage((Html.fromHtml("Activities by Jessica Stratton" +
-                    "<p>Choose the Remote Controll to access your favourite shows" +
+                    "<p>Choose the Remote Control to access your favourite shows" +
                     "<p>Choose the Lamp to access light settings" +
                     "<p>Choose the Blinds to open/close the blinds")));
             builder .setCancelable(false)

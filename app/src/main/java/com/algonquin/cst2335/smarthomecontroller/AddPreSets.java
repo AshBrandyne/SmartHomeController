@@ -3,6 +3,7 @@ package com.algonquin.cst2335.smarthomecontroller;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
@@ -15,6 +16,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -69,7 +72,7 @@ public class AddPreSets extends AppCompatActivity {
         setContentView(R.layout.activity_add_pre_sets);
         ListView presets = (ListView) findViewById(R.id.chatWindow);
 
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         send = (Button) findViewById(R.id.send);
         //ListView presetWindow = (ListView) findViewById(chatWindow);
         //setSupportActionBar(toolbar);
@@ -205,6 +208,55 @@ public class AddPreSets extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        //if it's help, show the help screen!
+        if (menuItem.getItemId() ==  R.id.action_help) {
+            final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+
+            builder.setTitle("Set Temperature Activity");
+            builder.setMessage("Activity made by Tyler Woyiwada: " +
+                    " Click the blue button to edit the preset, the red one to delete a preset, and Save Preset to save a preset.");
+            builder .setCancelable(false)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            final android.app.AlertDialog alert = builder.create();
+            alert.show();
+
+        } else {
+            Intent intent = new Intent();
+            switch (menuItem.getItemId()) {
+                case R.id.action_home:
+                    intent = new Intent(this, HomeSubMenu.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_sofa:
+                    intent = new Intent(this, LRHome.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_fridge:
+                    intent = new Intent(this, KitchenListActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_car:
+                    intent = new Intent(this, AutomobileListActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+
+        }
+        return true;
     }
 
 

@@ -89,6 +89,13 @@ public class KitchenListActivity extends AppCompatActivity {
         Button okButton = (Button) findViewById(R.id.newItemKButton);
         theItems.setAdapter(itemAdapter);
 
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
 
 

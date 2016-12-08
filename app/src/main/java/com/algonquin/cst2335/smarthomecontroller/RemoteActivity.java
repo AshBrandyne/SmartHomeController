@@ -42,14 +42,6 @@ public class RemoteActivity extends AppCompatActivity {
         SeekBar seek =(SeekBar) findViewById(R.id.seekBar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,8 +96,11 @@ public class RemoteActivity extends AppCompatActivity {
         if (menuItem.getItemId() ==  R.id.action_help) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-            builder.setTitle("Microwave Settings");
-            builder.setMessage((Html.fromHtml("Living Room Remote Activity by Jessica Stratton")));
+            builder.setTitle("Remote Settings");
+            builder.setMessage((Html.fromHtml("Living Room Remote Activity by Jessica Stratton" +
+                    "<p>Adjust the volume with volume slider" +
+                    "<p>Press Faves to save your favourite channel" +
+                    "<p>Click Sleep if you want to nap")));
             builder .setCancelable(false)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
