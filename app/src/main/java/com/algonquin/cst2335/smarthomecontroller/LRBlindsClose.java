@@ -11,6 +11,10 @@ import android.widget.Button;
 
 import com.algonquin.cst2335.smarthomecontroller.R;
 
+/**
+ * Author:Jessica Stratton
+ * LRBlindsClose is the closed blinds activity
+ */
 public class LRBlindsClose extends AppCompatActivity {
 
     @Override

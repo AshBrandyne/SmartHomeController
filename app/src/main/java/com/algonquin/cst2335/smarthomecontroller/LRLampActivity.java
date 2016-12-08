@@ -13,6 +13,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+/**
+ * Lamp Activity for the Living Room. Lets you set the mood for whatever activity you need.
+ * Author: Jessica Stratton
+ */
 
 public class LRLampActivity extends AppCompatActivity {
     ImageButton left;
@@ -70,7 +74,7 @@ public class LRLampActivity extends AppCompatActivity {
                 rawlings.setVisibility(View.VISIBLE);
                 Animation wow = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
                 rawlings.startAnimation(wow);
-
+        // Image from http://www.mlbbettingcentral.com/wp-content/uploads/2013/01/mlb-baseball.jpg
                 wow.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {

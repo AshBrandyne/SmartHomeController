@@ -9,7 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextClock;
-
+/**
+ * Author:Jessica Stratton
+ * LRBlindsActivity is the open blinds activity
+ */
 public class LRBlindsActivity extends AppCompatActivity {
 
     @Override
