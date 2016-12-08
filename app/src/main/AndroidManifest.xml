@@ -69,15 +69,6 @@
             android:label="@string/title_automobile_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AutomobileDetailActivity"
-            android:label="@string/title_automobile_detail"
-            android:parentActivityName=".AutomobileListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.algonquin.cst2335.smarthomecontroller.AutomobileListActivity" />
-        </activity>
-        <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -128,6 +119,12 @@
         <activity android:name=".AddPreSets" />
         <activity android:name=".GarageSettings" />
         <activity android:name=".Weather" />
+        <activity android:name=".AutomobileTempActivity" />
+        <activity android:name=".AutomobileLightsActivity" />
+        <activity android:name=".AutomobileFuelActivity" />
+        <activity android:name=".AutomobileRadioActivity" />
+        <activity android:name=".AutomobileOdometerActivity" />
+        <activity android:name=".AutomobileDriveActivity"></activity>
         <activity
             android:name=".LRHome"
             android:label="@string/title_activity_lrhome"

@@ -50,5 +50,17 @@
         <item>High</item>
         <item>Very High</item>
     </string-array>
+    <string-array name="fmRadio">
+        <item>88.5</item>
+        <item>89.9</item>
+        <item>88.5</item>
+        <item>88.5</item>
+        <item>88.5</item>
+        <item>88.5</item>
+        <item>88.5</item>
+        <item>88.5</item>
+    </string-array>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
