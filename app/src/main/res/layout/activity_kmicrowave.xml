@@ -12,6 +12,14 @@
     tools:context="com.algonquin.cst2335.smarthomecontroller.KMicrowaveActivity"
     android:background="@color/colorAccent">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    </android.support.design.widget.AppBarLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,6 +119,14 @@
             android:layout_gravity="fill_horizontal"
             android:id="@+id/btnStart"/>
     </GridLayout>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/pb"
+        />
 
 
 

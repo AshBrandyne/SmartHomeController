@@ -1,12 +1,18 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -15,6 +21,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -42,6 +49,7 @@ public class KMicrowaveActivity extends AppCompatActivity implements View.OnClic
     long resetTime;
     ImageView goat;
     GridLayout theButtons;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +72,8 @@ public class KMicrowaveActivity extends AppCompatActivity implements View.OnClic
         theButtons = (GridLayout)findViewById(R.id.microButtons);
 
         buttonList = Arrays.asList(b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, bStart, bStop, bReset);
+        progressBar = (ProgressBar) findViewById(R.id.pb);
+        progressBar.setVisibility(View.INVISIBLE);
 
         /* add Click Listener for each button */
         for (Button button : buttonList) {
@@ -175,7 +185,7 @@ public class KMicrowaveActivity extends AppCompatActivity implements View.OnClic
                 if (isRunning) { //if time has started cancel
                     countDownTimer.cancel();
                 }
-
+                isPaused=false;
                 numDisabled = false;
                 isRunning = false;
                 minutes=0;
@@ -222,6 +232,23 @@ public class KMicrowaveActivity extends AppCompatActivity implements View.OnClic
     }
 
 
+    private class MicrowaveUpdate extends AsyncTask<Long, Integer, String> {
+        protected String doInBackground(Long... args) {
+            //do the work here.
+
+            return "";
+        }
+
+        protected void onProgressUpdate(Integer... value) {
+            progressBar.setVisibility(View.VISIBLE);
+            progressBar.setProgress(value[0]);
+            //updates the GUI/progress bar
+        }
+
+        protected void onPostExecute(String result) {
+            //save the stuff or store the results
+        }
+    }
 
     private class MyMicrowaveTimer extends CountDownTimer {
         public MyMicrowaveTimer(long start, long interval) {
@@ -254,7 +281,62 @@ public class KMicrowaveActivity extends AppCompatActivity implements View.OnClic
             long mins = secs / 60;
             secs = secs % 60;
             clock.setText((String.format("%02d",mins))+":"+(String.format("%02d",secs)));
+
+            MicrowaveUpdate progressBar = new MicrowaveUpdate();
+            progressBar.execute(millisUntilFinished);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        //if it's help, show the help screen!
+        if (menuItem.getItemId() ==  R.id.action_help) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            builder.setTitle("Microwave Settings");
+            builder.setMessage((Html.fromHtml("Enter a time and press start" +
+                    "<p>Press Stop to pause the timer" +
+                    "<p>Press Reset to reset the timer" +
+                    "<p>Try pressing '6047' and Start for a surprise" +
+                    "<p>This Activity by Ash-Lee Hommy for CST 2335")));
+            builder .setCancelable(false)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            final AlertDialog alert = builder.create();
+            alert.show();
+
+        } else {
+            Intent intent = new Intent();
+            switch (menuItem.getItemId()) {
+                case R.id.action_home:
+                    intent = new Intent(this, HomeSubMenu.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_sofa:
+                    intent = new Intent(this, LRHome.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_fridge:
+                    intent = new Intent(this, KitchenListActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.action_car:
+                    intent = new Intent(this, AutomobileListActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+
+        }
+        return true;
     }
 
 
