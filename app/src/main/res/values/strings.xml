@@ -63,4 +63,11 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
 
+    <string name="lights">Lights</string>
+    <string name="frig">Refrigerator</string>
+    <string name="micro">Microwave</string>
+    <string name="kitchTemp">Set Temperature</string>
+    <string name="freeTemp">Freezer Temperature: </string>
+    <string name="friTemp">Fridge Temperature: </string>
+
 </resources>

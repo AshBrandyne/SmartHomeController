@@ -52,7 +52,7 @@ public class KFridgeActivity extends AppCompatActivity implements AdapterView.On
 
         //add values to Spinners
         List<String> settings = new ArrayList<>();
-        settings.add("Set Temperature");
+        settings.add(getResources().getString(R.string.kitchTemp));
         settings.add("1"); // 3.6 C
         settings.add("2"); // 2.6 C
         settings.add("3"); //Fridge 1.6 C
@@ -94,7 +94,7 @@ public class KFridgeActivity extends AppCompatActivity implements AdapterView.On
                     fritemp = "0 °C";
                     break;
             }
-            Snackbar.make(view, "Fridge Temperature: " + fritemp, Snackbar.LENGTH_SHORT)
+            Snackbar.make(view, getResources().getString(R.string.friTemp) + fritemp, Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();
             fridge.setText(fritemp);
 
@@ -116,7 +116,7 @@ public class KFridgeActivity extends AppCompatActivity implements AdapterView.On
                     freetemp = "-25 °C";
                     break;
             }
-            Snackbar.make(view, "Freezer Temperature: " + freetemp, Snackbar.LENGTH_SHORT)
+            Snackbar.make(view, getResources().getString(R.string.freeTemp) + freetemp, Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();        }
         freezer.setText(freetemp);
 

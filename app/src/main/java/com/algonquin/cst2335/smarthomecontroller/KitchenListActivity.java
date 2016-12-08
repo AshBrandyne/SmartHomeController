@@ -77,9 +77,9 @@ public class KitchenListActivity extends AppCompatActivity {
         toolbar.setTitle(getTitle());
 
         kitchenItems = new ArrayList<>();
-        kitchenItems.add("Lights");
-        kitchenItems.add("Microwave");
-        kitchenItems.add("Refrigerator");
+        kitchenItems.add(getResources().getString(R.string.lights));
+        kitchenItems.add(getResources().getString(R.string.micro));
+        kitchenItems.add(getResources().getString(R.string.frig));
 
         DatabaseConnector databaseConnector = new DatabaseConnector();
         databaseConnector.execute();
