@@ -35,4 +35,16 @@
     <string name="username">Username</string>
     <string name="newKitchen">Add Device</string>
 
+    <!--
+        Strings used in Automobile Activity and linking activities
+    -->
+
+    <string-array name="fanSettings">
+        <item>Off</item>
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+        <item>Very High</item>
+    </string-array>
+
 </resources>
