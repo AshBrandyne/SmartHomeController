@@ -1,6 +1,9 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
@@ -9,7 +12,10 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.text.Html;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -36,6 +42,7 @@ public class KLightsActivity extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         return inflater.inflate(R.layout.activity_klights, container, false);
     }
     @Override
@@ -96,6 +103,48 @@ public class KLightsActivity extends Fragment {
 
 
 
+    }
+
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        //if it's help, show the help screen!
+        if (menuItem.getItemId() ==  R.id.action_help) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
+
+            builder.setTitle("Kitchen by Ash-Lee Hommy");
+            builder.setMessage((Html.fromHtml("Choose Lights to adjust Lights in the Kitchen" +
+                    "<p>Choose Microwave to set timer for microwave" +
+                    "<p>Choose Refrigerator to set temperature" +
+                    "<p>Click Add Device to add a new appliance" +
+                    "<p>This Activity was designed by Ash-Lee Hommy for CST 2335")));
+            builder .setCancelable(false)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            final AlertDialog alert = builder.create();
+            alert.show();
+
+        } else {
+            Intent intent = new Intent();
+            switch (menuItem.getItemId()) {
+                case R.id.action_home:
+                    intent = new Intent(this.getContext(), HomeSubMenu.class);
+                    break;
+                case R.id.action_sofa:
+                    intent = new Intent(this.getContext(), LivingRoomListActivity.class);
+                    break;
+                case R.id.action_fridge:
+                    intent = new Intent(this.getContext(), KitchenListActivity.class);
+                    break;
+                case R.id.action_car:
+                    intent = new Intent(this.getContext(), AutomobileListActivity.class);
+                    break;
+            }
+            startActivity(intent);
+        }
+        return true;
     }
 
     private void setBackgroundSeekBar() {
