@@ -39,7 +39,7 @@ ToggleButton door;
                     // The toggle is enabled
                 } else {
                     Toast.makeText(GarageSettings.this,"Closing garage door", Toast.LENGTH_LONG).show();
-                    if (lights.isChecked()==false) lights.toggle();
+                    if (!lights.isChecked()) lights.toggle();
                     // The toggle is disabled
                 }
             }
