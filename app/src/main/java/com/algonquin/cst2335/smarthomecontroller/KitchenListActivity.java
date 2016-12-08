@@ -1,7 +1,9 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,8 +15,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -95,6 +100,54 @@ public class KitchenListActivity extends AppCompatActivity {
             // activity should be in two-pane mode.
             mTwoPane = true;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        //if it's help, show the help screen!
+        if (menuItem.getItemId() ==  R.id.action_help) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            builder.setTitle("Kitchen by Ash-Lee Hommy");
+            builder.setMessage((Html.fromHtml("Choose Lights to adjust Lights in the Kitchen" +
+                    "<p>Choose Microwave to set timer for microwave" +
+                    "<p>Choose Refrigerator to set temperature" +
+                    "<p>Click Add Device to add a new appliance" +
+                    "<p>This Activity was designed by Ash-Lee Hommy for CST 2335")));
+            builder .setCancelable(false)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            final AlertDialog alert = builder.create();
+            alert.show();
+
+        } else {
+            Intent intent = new Intent();
+            switch (menuItem.getItemId()) {
+                case R.id.action_home:
+                    intent = new Intent(this, HomeSubMenu.class);
+                    break;
+                case R.id.action_sofa:
+                    intent = new Intent(this, LivingRoomListActivity.class);
+                    break;
+                case R.id.action_fridge:
+                    intent = new Intent(this, KitchenListActivity.class);
+                    break;
+                case R.id.action_car:
+                    intent = new Intent(this, AutomobileListActivity.class);
+                    break;
+            }
+            startActivity(intent);
+        }
+        return true;
     }
 
     private class DatabaseConnector extends AsyncTask<String, Integer, String> {

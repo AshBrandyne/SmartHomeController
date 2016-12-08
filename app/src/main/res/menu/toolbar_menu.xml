@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_home"
+        android:title="Home"
+        android:icon="@drawable/homelogo"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_sofa"
+        android:title="Sofa"
+        android:icon="@drawable/sofa"
+        android:orderInCategory="102"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_fridge"
+        android:title="Kitchen"
+        android:icon="@drawable/fridgelogo"
+        android:orderInCategory="103"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_car"
+        android:title="Car"
+        android:icon="@drawable/car_48"
+        android:orderInCategory="104"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_help"
+        android:title="Help"
+        android:icon="@drawable/help"
+        android:orderInCategory="105"
+        app:showAsAction="always" />
+
+</menu>
