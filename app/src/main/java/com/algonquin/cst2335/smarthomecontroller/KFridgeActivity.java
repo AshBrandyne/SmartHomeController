@@ -1,8 +1,14 @@
 package com.algonquin.cst2335.smarthomecontroller;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -115,6 +121,51 @@ public class KFridgeActivity extends AppCompatActivity implements AdapterView.On
     }
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        //if it's help, show the help screen!
+        if (menuItem.getItemId() ==  R.id.action_help) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            builder.setTitle("Refrigerator Settings");
+            builder.setMessage((Html.fromHtml("Adjust the temperature of the fridge and freezer" +
+                    "<p>Activity created by Ash-Lee Hommy for CST 2335")));
+            builder .setCancelable(false)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            final AlertDialog alert = builder.create();
+            alert.show();
+
+        } else {
+            Intent intent = new Intent();
+            switch (menuItem.getItemId()) {
+                case R.id.action_home:
+                    intent = new Intent(this, HomeSubMenu.class);
+                    break;
+                case R.id.action_sofa:
+                    intent = new Intent(this, LivingRoomListActivity.class);
+                    break;
+                case R.id.action_fridge:
+                    intent = new Intent(this, KitchenListActivity.class);
+                    break;
+                case R.id.action_car:
+                    intent = new Intent(this, AutomobileListActivity.class);
+                    break;
+            }
+            startActivity(intent);
+        }
+        return true;
     }
 
 
