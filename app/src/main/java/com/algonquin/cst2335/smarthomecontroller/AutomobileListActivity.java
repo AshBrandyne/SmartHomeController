@@ -170,12 +170,9 @@ public class AutomobileListActivity extends AppCompatActivity
         if (menuItem.getItemId() ==  R.id.action_help) {
             final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
 
-            builder.setTitle("Microwave Settings");
-            builder.setMessage((Html.fromHtml("Enter a time and press start" +
-                    "<p>Press Stop to pause the timer" +
-                    "<p>Press Reset to reset the timer" +
-                    "<p>Try pressing '6047' and Start for a surprise" +
-                    "<p>This Activity by Ash-Lee Hommy for CST 2335")));
+            builder.setTitle("Automobile Activity");
+            builder.setMessage("Activity made by James Jarrett. Select an option to view and change " +
+                    "relevant settings.");
             builder .setCancelable(false)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
