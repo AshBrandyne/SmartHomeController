@@ -23,17 +23,12 @@ import java.util.List;
  * An activity representing a list of Automobiles. This activity
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,
- * lead to a {@link AutomobileDetailActivity} representing
+ * lead to a representing
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
 public class AutomobileListActivity extends AppCompatActivity
 {
-    /**
-     * Whether or not the activity is in two-pane mode, i.e. running on a tablet
-     * device.
-     */
-    private boolean mTwoPane;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,57 +40,23 @@ public class AutomobileListActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        automobiles = new ArrayList<String>();
-        automobiles.add("Chevrolet Avalanche 2012");
+        activities = new ArrayList<String>();
+        activities.add("Temperature Settings");
+        activities.add("Fuel Level");
+        activities.add("Radio");
+        activities.add("GPS");
+        activities.add("Lights");
+        activities.add("Odometer");
+        activities.add("Drive");
 
-        View recyclerView = findViewById(R.id.automobile_list);
+        View recyclerView = findViewById(R.id.activity_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
-
-        if (findViewById(R.id.automobile_detail_container) != null)
-        {
-            // The detail container view will be present only in the
-            // large-screen layouts (res/values-w900dp).
-            // If this view is present, then the
-            // activity should be in two-pane mode.
-            mTwoPane = true;
-        }
-
-        FloatingActionButton addNewAutomobile = (FloatingActionButton) findViewById(R.id.addNewAutomobile);
-        addNewAutomobile.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                AlertDialog.Builder newAutomobileBuilder = new AlertDialog.Builder(AutomobileListActivity.this);
-
-                LayoutInflater inflater = AutomobileListActivity.this.getLayoutInflater();
-                final View addAutomobile = inflater.inflate(R.layout.add_automobile_dialog, null);
-
-                newAutomobileBuilder.setView(addAutomobile).setTitle("Add new automobile?")
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener()
-                        {
-                            public void onClick(DialogInterface dialog, int id)
-                            {
-                                //User clicked OK button
-                            }
-                        })
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
-                        {
-                            public void onClick(DialogInterface dialog, int id)
-                            {
-                                //User clicked cancel button
-                            }
-                        })
-                        .create()
-                        .show();
-            }
-        });
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView)
     {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(automobiles));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(activities));
     }
 
     public class SimpleItemRecyclerViewAdapter
@@ -124,29 +85,43 @@ public class AutomobileListActivity extends AppCompatActivity
             holder.mIdView.setText(mValues.get(position));
             holder.mContentView.setText(mValues.get(position));
 
+            final int activity = position;
             holder.mView.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View v)
                 {
-                    if (mTwoPane)
-                    {
-                        Bundle arguments = new Bundle();
-                        arguments.putString(AutomobileDetailFragment.ARG_ITEM_ID, holder.mItem);
-                        AutomobileDetailFragment fragment = new AutomobileDetailFragment();
-                        fragment.setArguments(arguments);
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.automobile_detail_container, fragment)
-                                .commit();
-                    }
-                    else
-                    {
-                        Context context = v.getContext();
-                        Intent intent = new Intent(context, AutomobileDetailActivity.class);
-                        intent.putExtra(AutomobileDetailFragment.ARG_ITEM_ID, holder.mItem);
+                Context context = v.getContext();
 
-                        context.startActivity(intent);
-                    }
+                switch(activity) {
+                    case 0:
+                        Intent intent1 = new Intent(context, AutomobileTempActivity.class);
+                        context.startActivity(intent1);
+                        break;
+                    case 1:
+                        Intent intent2 = new Intent(context, AutomobileFuelActivity.class);
+                        context.startActivity(intent2);
+                        break;
+                    case 2:
+                        Intent intent3 = new Intent(context, AutomobileRadioActivity.class);
+                        context.startActivity(intent3);
+                        break;
+                    case 4:
+                        Intent intent5 = new Intent(context, AutomobileLightsActivity.class);
+                        context.startActivity(intent5);
+                        break;
+                    case 5:
+                        Intent intent6 = new Intent(context, AutomobileOdometerActivity.class);
+                        context.startActivity(intent6);
+                        break;
+                    case 6:
+                        Intent intent7 = new Intent(context, AutomobileDriveActivity.class);
+                        context.startActivity(intent7);
+                        break;
+                    default:
+                        break;
+                }
+
                 }
             });
         }
@@ -180,5 +155,5 @@ public class AutomobileListActivity extends AppCompatActivity
         }
     }
 
-    ArrayList<String> automobiles;
+    ArrayList<String> activities;
 }
