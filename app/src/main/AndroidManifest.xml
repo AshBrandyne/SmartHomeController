@@ -87,12 +87,14 @@
             android:label="@string/title_activity_remote"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".HomeTemp" />
-        <activity android:name=".KMicrowaveActivity" >
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.algonquin.cst2335.smarthomecontroller.KitchenListActivity" />
+        <activity android:name=".KMicrowaveActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.algonquin.cst2335.smarthomecontroller.KitchenListActivity" />
         </activity>
+
         <fragment android:name=".KLightsActivity" />
+
         <activity android:name=".KFridgeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -125,7 +127,11 @@
 
         <activity android:name=".AddPreSets" />
         <activity android:name=".GarageSettings" />
-        <activity android:name=".Weather"></activity>
+        <activity android:name=".Weather" />
+        <activity
+            android:name=".LRHome"
+            android:label="@string/title_activity_lrhome"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

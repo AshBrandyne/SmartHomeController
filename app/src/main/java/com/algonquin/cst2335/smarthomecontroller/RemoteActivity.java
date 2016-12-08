@@ -16,6 +16,10 @@ import android.widget.Toast;
 
 import static com.algonquin.cst2335.smarthomecontroller.R.id.favButton;
 
+/**
+ * Author: Jessica Stratton
+ * RemoteActivity is the activity to do remote functions. There is a volume seekbar at the bottom
+ */
 public class RemoteActivity extends AppCompatActivity {
 
     @Override
