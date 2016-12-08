@@ -34,6 +34,10 @@
     </string-array>
     <string name="username">Username</string>
     <string name="newKitchen">Add Device</string>
+    <string name="title_activity_lrhome">LRHome</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--
         Strings used in Automobile Activity and linking activities

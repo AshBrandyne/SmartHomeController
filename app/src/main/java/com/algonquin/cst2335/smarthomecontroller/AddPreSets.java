@@ -10,9 +10,11 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -29,14 +31,17 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 
+import static android.R.id.list;
 import static com.algonquin.cst2335.smarthomecontroller.R.id.chatWindow;
 
 public class AddPreSets extends AppCompatActivity {
     private EditText chatInput;
-
+    ChatAdapter messageAdapter;
     ArrayList<String> chat = new ArrayList<>();
     String input;
     Button send;
+    Button delete;
+    Button edit;
     private SQLiteDatabase datasource;
     final String ACTIVITY_NAME = "ChatWindow";
     /**
@@ -57,19 +62,20 @@ public class AddPreSets extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_pre_sets);
         ListView presets = (ListView) findViewById(R.id.chatWindow);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         send = (Button) findViewById(R.id.send);
         //ListView presetWindow = (ListView) findViewById(chatWindow);
         //setSupportActionBar(toolbar);
-        final ChatAdapter messageAdapter = new ChatAdapter(this);
+        messageAdapter = new ChatAdapter(this);
 
         chatInput = (EditText) findViewById(R.id.chatInput);
         input = chatInput.getText().toString();
 
         datasource = new PreSetDataBaseHelper(this).getWritableDatabase();
-
-        Cursor cur = datasource.query(PreSetDataBaseHelper.chatTable, new String[]{PreSetDataBaseHelper.KEY_ID, PreSetDataBaseHelper.KEY_MESSAGE}, null, null, null, null, null, null);
         presets.setAdapter(messageAdapter);
+        Cursor cur = datasource.query(PreSetDataBaseHelper.chatTable, new String[]{PreSetDataBaseHelper.KEY_ID, PreSetDataBaseHelper.KEY_MESSAGE}, null, null, null, null, null, null);
+
         cur.moveToFirst();
 
 
@@ -112,7 +118,7 @@ public class AddPreSets extends AppCompatActivity {
      */
     public Action getIndexApiAction() {
         Thing object = new Thing.Builder()
-                .setName("ChatWindow Page") // TODO: Define a title for the content shown.
+                .setName("Add Presets") // TODO: Define a title for the content shown.
                 // TODO: Make sure this auto-generated URL is correct.
                 .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
                 .build();
@@ -156,20 +162,35 @@ public class AddPreSets extends AppCompatActivity {
             return chat.get(position);
         }
 
-//        public View getView(int position, View convertView, ViewGroup parent) {
-//
-//            LayoutInflater inflater = ChatWindow.this.getLayoutInflater();
-//            View result = null;
-//            if (position % 2 == 0) {
-//                result = inflater.inflate(R.layout.chat_row_incoming, null);
-//            } else {
-//                result = inflater.inflate(R.layout.chat_row_outgoing, null);
-//            }
-//            TextView message_text = (TextView) result.findViewById(R.id.message_text);
-//            message_text.setText(getItem(position));
-//            return result;
-//
-//        }
+      public View getView(int position, View convertView, ViewGroup parent) {
+
+            LayoutInflater inflater = AddPreSets.this.getLayoutInflater();
+            View result = inflater.inflate(R.layout.presetlayout, null);
+
+            TextView message_text = (TextView) result.findViewById(R.id.message_text);
+            message_text.setText(getItem(position));
+            edit = (Button)result.findViewById(R.id.editButton);
+            delete = (Button)result.findViewById(R.id.deleteButton);
+            final int positionToRemove = position;
+          delete.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  messageAdapter.remove(chat.get(positionToRemove));
+                  messageAdapter.notifyDataSetChanged();
+              }
+          });
+
+          edit.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+
+                  chatInput.setText(chat.get(positionToRemove).toString());
+
+              }
+          });
+            return result;
+
+        }
     }
 
 
