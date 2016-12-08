@@ -51,14 +51,14 @@
         <item>Very High</item>
     </string-array>
     <string-array name="fmRadio">
-        <item>88.5</item>
-        <item>89.9</item>
-        <item>88.5</item>
-        <item>88.5</item>
-        <item>88.5</item>
-        <item>88.5</item>
-        <item>88.5</item>
-        <item>88.5</item>
+        <item>88.5 FM</item>
+        <item>89.9 FM</item>
+        <item>93.9 FM</item>
+        <item>99.7 FM</item>
+        <item>100.3 FM</item>
+        <item>101.7 FM</item>
+        <item>105.3 FM</item>
+        <item>106.9 FM</item>
     </string-array>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
